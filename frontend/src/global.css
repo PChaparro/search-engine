@@ -1,0 +1,46 @@
+/* manrope-300 - latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/manrope-v13-latin-300.woff2') format('woff2'),
+    url('fonts/manrope-v13-latin-300.woff') format('woff'),
+    url('fonts/manrope-v13-latin-300.ttf') format('truetype');
+}
+
+/* manrope-regular - latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/manrope-v13-latin-regular.woff2') format('woff2'),
+    url('fonts/manrope-v13-latin-regular.woff') format('woff'),
+    url('fonts/manrope-v13-latin-regular.ttf') format('truetype');
+}
+
+/* manrope-700 - latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/manrope-v13-latin-700.woff2') format('woff2'),
+    url('fonts/manrope-v13-latin-700.woff') format('woff'),
+    url('fonts/manrope-v13-latin-700.ttf') format('truetype');
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  font-family: 'Manrope';
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Global colors and sizes */
+:root {
+  --blue: #4766da;
+  --fs-sm: 1rem;
+  --fs-md: 1.2rem;
+  --fs-lg: 1.6rem;
+  --fs-xlg: 2rem;
+}
