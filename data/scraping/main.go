@@ -27,7 +27,7 @@ func main() {
 	}
 
 	// Queries
-	queue := [10]string{
+	queue := [14]string{
 		"Learn web development",
 		"Latin music",
 		"Best places to visit in Colombia",
@@ -38,6 +38,10 @@ func main() {
 		"Programming languages comparison",
 		"Try not to laugh",
 		"Learn data science",
+		"Learn languages",
+		"Looney Tunes Clasics",
+		"Best carnivals in the world", 
+		"Open source software",
 	}
 
 	// Get results from youtube
@@ -46,7 +50,7 @@ func main() {
 	for _, query := range queue {
 		start := time.Now()
 
-		queryResults, err := youtubeScraper.GetVideosData(ytkey, query, 100, 32)
+		queryResults, err := youtubeScraper.GetVideosData(ytkey, query, 150, 64)
 
 		if err != nil {
 			log.Fatal(fmt.Sprintf("There was an error with the query: %s", query))
