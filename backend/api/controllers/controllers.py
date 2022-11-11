@@ -12,12 +12,18 @@ def search():
     payload = request.json
     response.content_type = 'application/json'
 
-    if(payload and 'criteria' in payload):
+    if(payload and 'criteria' in payload): # Provided criteria
+
+        if payload['criteria'].strip() == '': # Non empty criteria
+            response.status = 400 # Bad request
+            return { 'error': True, 'message': 'Search criteria must not be empty' }
+
         # Transform to vector
         vector = utils.vectorize(payload['criteria'])
+        # Search on opensearch
         videos = models.get_results_from_vector(vector)
 
-        # Get responses from opensearch 
+        # Send response
         return { 'error': False, 'message': 'Ok', 'results': videos}
     else:
         response.status = 400 # Bad request

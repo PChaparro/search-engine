@@ -14,6 +14,7 @@ open_search_client = OpenSearch(
 )
 
 def get_results_from_vector(vector: List[float]) -> interfaces.ISearchResult:
+    # Prepare the query
     open_search_query = {
         'size': 24, 
         # Fields than will be sended as response
@@ -33,11 +34,13 @@ def get_results_from_vector(vector: List[float]) -> interfaces.ISearchResult:
         }
     }
 
+    # Perform the query on opensearch
     response = open_search_client.search(
         index = 'videos',
         body = open_search_query,
         request_timeout = 64
     )
 
+    # Parse results
     videos = [x['_source'] for x in response['hits']['hits']]
     return videos
