@@ -1,6 +1,7 @@
 import os
-from typing import List, TypedDict
 from opensearchpy import OpenSearch
+from interfaces import interfaces
+from typing import List
 
 # Connect to opensearch
 open_search_client = OpenSearch(
@@ -12,16 +13,7 @@ open_search_client = OpenSearch(
         verify_cers = False,
 )
 
-# results 'interface'
-class Video(TypedDict):
-    url: str
-    thumbnail: str
-    title: str
-    tags: List[str]
-
-results = List[Video]
-
-def get_results_from_vector(vector: List[float]) -> results:
+def get_results_from_vector(vector: List[float]) -> interfaces.ISearchResult:
     open_search_query = {
         'size': 24, 
         # Fields than will be sended as response
