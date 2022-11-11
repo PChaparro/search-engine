@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+
+  se-opensearch:
+    image: opensearchproject/opensearch:1.3.6
+    container_name: se-opensearch
+    hostname: se-opensearch
+    restart: on-failure
+    ports: 
+      - "9200:9200"
+      - "9600:9600" # Performance analyzer
+    expose:
+      - "9200"
+      - "9600"
+    environment: 
+      - discovery.type=single-node
+    volumes: 
+      - opensearch-data-1:/usr/share/opensearch/data
+    networks: 
+      - se-opensearch-net
+
+  se-opensearch-dashboards:
+    image: opensearchproject/opensearch-dashboards:1.3.6
+    container_name: se-opensearch-dashboards
+    hostname: se-opensearch-dashboards
+    depends_on:
+      - se-opensearch
+    restart: always
+    ports: 
+      - "5601:5601"
+    expose: 
+      - "5601"
+    environment: 
+      - OPENSEARCH_HOSTS="https://se-opensearch:9200"
+    networks: 
+      - se-opensearch-net
+  
+volumes:
+  opensearch-data-1:
+
+networks:
+  se-opensearch-net: 
+
