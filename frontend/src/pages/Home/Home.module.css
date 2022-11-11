@@ -2,3 +2,10 @@
   max-width: 1000px;
   margin: 0px auto;
 }
+
+.videos {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, 320px);
+  place-content: center;
+}

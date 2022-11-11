@@ -39,8 +39,14 @@
 /* Global colors and sizes */
 :root {
   --blue: #4766da;
+  --light-grey: #dedede;
+  --grey: #4c4c4c;
   --fs-sm: 1rem;
   --fs-md: 1.2rem;
   --fs-lg: 1.6rem;
   --fs-xlg: 2rem;
+}
+
+body {
+  background-color: #fafafa;
 }

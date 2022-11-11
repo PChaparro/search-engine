@@ -1,0 +1,19 @@
+import Styles from './VideoCard.module.css';
+import { IVideo } from '../../interfaces/videos';
+
+interface IProps {
+  video: Ivideo;
+}
+
+export const VideoCard = ({ video }: IProps) => {
+  return (
+    <article className={Styles.card}>
+      <a href={video.url} target='_blank' rel='noopener'>
+        <img src={video.thumbnail} alt={video.title} className={Styles.card__image} />
+      </a>
+      <a href={video.url} target='_blank' rel='noopener'>
+	<h3 className={Styles.card__title}>{video.title}</h3>
+      </a>
+    </article>
+  );
+};
