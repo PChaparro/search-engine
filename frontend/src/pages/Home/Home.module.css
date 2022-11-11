@@ -9,3 +9,15 @@
   grid-template-columns: repeat(auto-fill, 320px);
   place-content: center;
 }
+
+@media screen and (max-width: 1200px){
+  .container{
+    padding: 4px 16px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .videos{
+    grid-template-columns: repeat(auto-fill, 240px);
+  }
+}
