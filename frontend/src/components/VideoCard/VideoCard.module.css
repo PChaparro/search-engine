@@ -4,6 +4,8 @@
   border-radius: 8px;
   overflow: hidden;
   background-color: white;
+
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card__body {
@@ -43,4 +45,9 @@
   color: white;
   font-weight: bolder;
   padding: 4px 8px;
+}
+
+.card:hover{  
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px var(--light-grey);
 }
