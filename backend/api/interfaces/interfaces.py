@@ -7,6 +7,6 @@ class Video(TypedDict):
     title: str
     tags: List[str]
 
+
 # Search results 'interface'
 ISearchResult = List[Video]
-
