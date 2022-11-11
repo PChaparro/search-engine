@@ -5,6 +5,6 @@ load_dotenv()
 
 # Setup routes
 from controllers import controllers
-controllers.ping()
+controllers.search()
 
 run(host='localhost', port=8080, debug=True, reloader=True)
