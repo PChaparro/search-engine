@@ -1,7 +1,4 @@
-# Load environment variables
-from dotenv import load_dotenv
 from bottle import run
-load_dotenv()
 
 # Setup routes
 from controllers import controllers
