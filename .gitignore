@@ -2,3 +2,4 @@
 **/data.json
 **/.ipynb_checkpoints
 **/opensearch-data-*
+**/__pycache__
