@@ -2,7 +2,7 @@ import Styles from './VideoCard.module.css';
 import { IVideo } from '../../interfaces/videos';
 
 interface IProps {
-  video: Ivideo;
+  video: IVideo;
 }
 
 export const VideoCard = ({ video }: IProps) => {
@@ -17,7 +17,7 @@ export const VideoCard = ({ video }: IProps) => {
         </a>
         <div className={Styles.card__tags}>
           {video.tags.length !== 0 &&
-            video.tags.slice(0, 3).map((tag, index) => {
+            video.tags.slice(0, 3).map((tag: string, index: number) => {
               return (
                 <span className={Styles.card__tag} key={`${video.url}-${index}`}>
                   {tag}

@@ -1,6 +1,6 @@
 import Styles from './Home.module.css';
 
-import { BallTriangle } from '@agney/react-loading';
+import { BallTriangle } from 'react-loader-spinner'
 import { SearchBar } from '../../components/SearchBar/SearchBar';
 import { VideoCard } from '../../components/VideoCard/VideoCard';
 import { useGetVideos } from '../../hooks/useGetVideos/useGetVideos';
@@ -11,7 +11,11 @@ export const Home = () => {
   return (
     <main className={Styles.container}>
       <SearchBar searchCallback={search} />
-      {isLoading && <div className={Styles.loader}><BallTriangle color='#4766da' width={72} /></div>}
+      {isLoading && (
+        <div className={Styles.loader}>
+	  <BallTriangle color={'#4766da'} width={'72'} ariaLabel={'Loading'} />
+        </div>
+      )}
       <section className={Styles.videos}>
         {!isLoading &&
           videos.map((video, index) => {
