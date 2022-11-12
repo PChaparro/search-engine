@@ -10,7 +10,7 @@ export const SearchBar = ({ searchCallback }: Props) => {
   const searchBar = useRef<HTMLInputElement>(null);
 
   const HandleSubmit = () => {
-    if(!searchBar.current) return;
+    if (!searchBar.current) return;
     searchCallback(searchBar.current.value);
   };
 
