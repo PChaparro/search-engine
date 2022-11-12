@@ -30,3 +30,10 @@ def search():
     else:
         response.status = 400  # Bad request
         return {"error": True, "message": "Search criteria must be provided"}
+
+
+@get("/random")
+def random():
+    # Get random videos from open search
+    videos = models.get_random_videos()
+    return {"error": False, "message": "Ok", "results": videos}
