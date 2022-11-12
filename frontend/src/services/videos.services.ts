@@ -10,3 +10,13 @@ export const SearchVideosService = async (criteria: string): Promise<Array<IVide
     return [];
   }
 };
+
+export const GetRandomVideosService = async (): Promise<Array<IVideo>> => {
+  try {
+    const response = await axios.get('http://localhost:8080/random');
+    const videos = response.data.results;
+    return videos;
+  } catch {
+    return [];
+  }
+};
