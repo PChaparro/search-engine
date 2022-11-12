@@ -9,7 +9,14 @@ export const VideoCard = ({ video }: IProps) => {
   return (
     <article className={Styles.card}>
       <a href={video.url} target='_blank' rel='noopener'>
-        <img src={video.thumbnail} alt={video.title} className={Styles.card__image} />
+        <img
+          src={video.thumbnail}
+          alt={video.title}
+          className={Styles.card__image}
+          width={'328px'}
+          height={'179px'}
+          loading={'lazy'}
+        />
       </a>
       <div className={Styles.card__body}>
         <a href={video.url} target='_blank' rel='noopener'>
