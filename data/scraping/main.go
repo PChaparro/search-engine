@@ -3,12 +3,13 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/PChaparro/youtube-scraper"
-	ysi "github.com/PChaparro/youtube-scraper/interfaces"
-	"github.com/joho/godotenv"
 	"log"
 	"os"
 	"time"
+
+	youtubescraper "github.com/PChaparro/go-youtube-scraper"
+	ysi "github.com/PChaparro/go-youtube-scraper/interfaces"
+	"github.com/joho/godotenv"
 )
 
 func main() {
@@ -40,7 +41,7 @@ func main() {
 		"Learn data science",
 		"Learn languages",
 		"Looney Tunes Clasics",
-		"Best carnivals in the world", 
+		"Best carnivals in the world",
 		"Open source software",
 	}
 
@@ -50,7 +51,7 @@ func main() {
 	for _, query := range queue {
 		start := time.Now()
 
-		queryResults, err := youtubeScraper.GetVideosData(ytkey, query, 150, 64)
+		queryResults, err := youtubescraper.GetVideosData(ytkey, query, 150, 64, true)
 
 		if err != nil {
 			log.Fatal(fmt.Sprintf("There was an error with the query: %s", query))
